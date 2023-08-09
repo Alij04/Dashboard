@@ -46,7 +46,7 @@ function createData(name, image, desc, price, quantity) {
 }
 
 const rows = [
-    createData('Product 1', [img1, img2], 'This is an iphone', 300000, 5),
+    createData('Product 1', [img1, img2, img1, img2, img1, img1, img1], 'This is an iphone', 300000, 5),
     createData('Product 2', [img1, img2], 'This is an iphone', 300000, 5),
     createData('Product 3', [img1, img2], 'This is an iphone', 300000, 5),
     createData('Product 4', [img1, img2], 'This is an iphone', 300000, 5),
