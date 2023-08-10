@@ -39,19 +39,14 @@ const columns = [
 
 ];
 
-function createData(name, image, desc, price, quantity) {
 
-    return { name, image, desc, price, quantity };
-
-}
 
 const rows = [
-    createData('Product 1', [img1, img2, img1, img2, img1, img1, img1], 'This is an iphone', 300000, 5),
-    createData('Product 2', [img1, img2], 'This is an iphone', 300000, 5),
-    createData('Product 3', [img1, img2], 'This is an iphone', 300000, 5),
-    createData('Product 4', [img1, img2], 'This is an iphone', 300000, 5),
-    createData('Product 5', [img1, img2], 'This is an iphone', 300000, 5),
-
+    { name: "Product1", image: [img1, img2, img2, img1], desc: "This is product1", price: 1, quantity: 4 },
+    { name: "Product2", image: [img1, img2, img1, img2], desc: "This is product2", price: 1, quantity: 4 },
+    { name: "Product3", image: [img1, img2], desc: "This is product3", price: 1, quantity: 4 },
+    { name: "Product4", image: [img1, img2], desc: "This is product4", price: 1, quantity: 4 },
+    { name: "Product5", image: [img1, img2], desc: "This is product5", price: 1, quantity: 4 }
 
 ];
 
