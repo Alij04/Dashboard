@@ -33,7 +33,10 @@ export default function AddItem({ closeEvent }) {
         setQuantity(event.target.value);
     }
     const handleImageChange = (event) => {
-        setImages(event.currentTarget.files)
+        const files = Array.from(event.target.files);
+        console.log(files)
+        setImages(files)
+
 
     }
     return (
@@ -61,6 +64,7 @@ export default function AddItem({ closeEvent }) {
                         <TextField variant='outlined' onChange={handleImageChange} inputProps={{ accept: 'image/*', multiple: true }}
                             size="small" type="file" sx={{ minWidth: "100%" }} />
                     </Grid>
+
                     <Grid item xs={12} >
                         <TextField
                             value={desc} onChange={handleDescChange}

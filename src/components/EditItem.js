@@ -12,7 +12,7 @@ import { useEffect } from 'react'
 export default function EditItem(props) {
     const [name, setName] = useState(props.row.name)
     const [desc, setDesc] = useState(props.row.desc)
-    const [images, setImages] = useState([props.row.image])
+    const [images, setImages] = useState(props.row.image)
     const [price, setPrice] = useState(props.row.price)
     const [quantity, setQuantity] = useState(props.row.quantity)
 
@@ -38,8 +38,9 @@ export default function EditItem(props) {
         setQuantity(event.target.value);
     }
     const handleImageChange = (event) => {
-        setImages(event.currentTarget.files)
-
+        const files = Array.from(event.currentTarget.files)
+        console.log(files)
+        setImages(files)
     }
     return (
         <>
@@ -63,8 +64,14 @@ export default function EditItem(props) {
                         <TextField variant='outlined' value={quantity} onChange={handleQuantityChange} label="Quantity" size="small" type="number" sx={{ minWidth: "100%" }} />
                     </Grid>
                     <Grid item xs={12} >
+
                         <TextField variant='outlined' onChange={handleImageChange} inputProps={{ accept: 'image/*', multiple: true }}
                             size="small" type="file" sx={{ minWidth: "100%" }} />
+                    </Grid>
+                    <Grid item xs={12} >
+                        {images.length > 0 ? images.map((image, index) => (
+                            typeof (image) === typeof ('a') ? < img key={index} src={image} width={"100px"} style={{ margin: "10px" }} alt={`Image ${index}`} /> : console.log()
+                        )) : console.log()}
                     </Grid>
                     <Grid item xs={12} >
                         <TextField
